@@ -107,10 +107,30 @@ done
 
 ### Git / PR
 
-- [ ] 提交完成（待本轮改动提交）
-- [ ] 推送分支
-- [ ] 创建 PR
-- [ ] 合并 PR
+- [x] 提交完成
+- [x] 推送分支
+- [x] 创建 PR
+- [x] 合并 PR
+
+PR 信息：
+
+- PR: `https://github.com/Rupert-WLLP-Bai/cs146s/pull/1`
+- 状态：`MERGED`
+- Merge commit: `7a21b01289faa60fde6848a78e8a9c97ae31f1b5`
+
+分支清理：
+
+- 远端分支 `feat/week1-complete` 已删除（检查 `origin` 仅剩 `master`）。
+- 本地已在 `master` 且与 `origin/master` 同步。
+
+模型清理：
+
+- 已删除临时模型：
+  - `modelscope.cn/unsloth/Qwen3.5-4B-GGUF:Q4_K_M`
+  - `modelscope.cn/unsloth/Qwen3-0.6B-GGUF:Q4_K_M`
+- 已保留作业模型：
+  - `mistral-nemo:12b`
+  - `llama3.1:8b`
 
 ## 结果摘要
 
