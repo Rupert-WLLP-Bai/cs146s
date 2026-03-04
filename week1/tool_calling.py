@@ -70,7 +70,19 @@ TOOL_REGISTRY: Dict[str, Callable[..., str]] = {
 # ==========================
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a tool-calling planner.
+Return ONE strict JSON object and nothing else.
+
+Use this schema exactly:
+{"tool":"output_every_func_return_type","args":{"file_path":"tool_calling.py"}}
+
+Rules:
+- No markdown fences.
+- No explanation text.
+- No trailing commas.
+- Use double quotes for all keys/strings.
+"""
 
 
 def resolve_path(p: str) -> str:

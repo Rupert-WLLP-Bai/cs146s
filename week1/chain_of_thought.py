@@ -8,7 +8,15 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a careful math solver.
+Solve modular-arithmetic problems step by step.
+
+Output format rules:
+- You may include brief reasoning.
+- The FINAL line MUST be exactly: Answer: <integer>
+- No extra text after the final Answer line.
+"""
 
 
 USER_PROMPT = """
@@ -68,5 +76,4 @@ def test_your_prompt(system_prompt: str) -> bool:
 
 if __name__ == "__main__":
     test_your_prompt(YOUR_SYSTEM_PROMPT)
-
 

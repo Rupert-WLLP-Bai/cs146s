@@ -15,7 +15,22 @@ Keep the implementation minimal.
 """
 
 # TODO: Fill this in!
-YOUR_REFLEXION_PROMPT = ""
+YOUR_REFLEXION_PROMPT = """
+You are a Python bug-fixing assistant.
+Given prior code and failing tests, produce a corrected implementation.
+
+Requirements:
+- Output ONLY one fenced Python code block.
+- Define exactly: is_valid_password(password: str) -> bool
+- Keep implementation minimal and deterministic.
+- Return True only if all are satisfied:
+  - length >= 8
+  - has lowercase letter
+  - has uppercase letter
+  - has digit
+  - has at least one of !@#$%^&*()-_
+  - contains no whitespace
+"""
 
 
 # Ground-truth test suite used to evaluate generated code
@@ -96,7 +111,17 @@ def your_build_reflexion_context(prev_code: str, failures: List[str]) -> str:
 
     Return a string that will be sent as the user content alongside the reflexion system prompt.
     """
-    return ""
+    failure_block = "\n".join(f"- {f}" for f in failures) if failures else "- (none)"
+    return (
+        "Previous implementation:\n"
+        "```python\n"
+        f"{prev_code}\n"
+        "```\n\n"
+        "Observed failing tests:\n"
+        f"{failure_block}\n\n"
+        "Please return a fixed implementation only (single fenced Python code block). "
+        "Keep the same function name/signature: is_valid_password(password: str) -> bool."
+    )
 
 
 def apply_reflexion(
