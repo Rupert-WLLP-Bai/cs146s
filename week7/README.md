@@ -14,24 +14,22 @@ Slightly enhanced full‑stack starter (copied from Week 5) with a few backend i
 
 ## Quickstart
 
-1) Create and activate a virtualenv, then install dependencies
+1) Install dependencies from the repository root
 
 ```bash
-cd /Users/mihaileric/Documents/code/modern-software-dev-assignments
-python -m venv .venv && source .venv/bin/activate
-pip install -e .[dev]
+uv sync --group dev
 ```
 
 2) (Optional) Install pre-commit hooks
 
 ```bash
-pre-commit install
+uv run pre-commit install
 ```
 
-3) Run the app (from `week6/`)
+3) Run the app (from `week7/`)
 
 ```bash
-cd week7 && make run
+cd week7 && uv run make run
 ```
 
 Open `http://localhost:8000` for the frontend and `http://localhost:8000/docs` for the API docs.
@@ -48,18 +46,17 @@ docs/                   # TASKS for agent-driven workflows
 ## Tests
 
 ```bash
-cd week7 && make test
+cd week7 && uv run make test
 ```
 
 ## Formatting/Linting
 
 ```bash
-cd week7 && make format
-cd week7 && make lint
+cd week7 && uv run make format
+cd week7 && uv run make lint
 ```
 
 ## Configuration
 
 Copy `.env.example` to `.env` (in `week7/`) to override defaults like the database path.
-
 

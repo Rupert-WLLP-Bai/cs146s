@@ -1,8 +1,8 @@
 # Tasks for Repo
 
 ## 1) Enable pre-commit and fix the repo
-- Install hooks: `pre-commit install`
-- Run: `pre-commit run --all-files`
+- Install hooks: `uv run pre-commit install`
+- Run: `uv run pre-commit run --all-files`
 - Fix any formatting/lint issues (black/ruff)
 
 ## 2) Add search endpoint for notes
@@ -31,4 +31,3 @@
 ## 7) Docs drift check (manual for now)
 - Create/maintain a simple `API.md` describing endpoints and payloads
 - After each change, verify docs match actual OpenAPI (`/openapi.json`)
-

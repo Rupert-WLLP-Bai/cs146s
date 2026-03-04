@@ -20,13 +20,13 @@ Follow these instructions to set up Cursor and open your project:
 
 ### Current Application
 Here's how you can start running the current starter application: 
-1. Activate your conda environment.
+1. Install dependencies from the repository root.
 ```
-conda activate cs146s 
+uv sync --group dev
 ```
 2. From the project root, run the server:
 ```
-poetry run uvicorn week2.app.main:app --reload
+uv run uvicorn week2.app.main:app --reload
 ```
 3. Open a web browser and navigate to http://127.0.0.1:8000/.
 4. Familiarize yourself with the current state of the application. Make sure you can successfully input notes and produce the extracted action item checklist. 

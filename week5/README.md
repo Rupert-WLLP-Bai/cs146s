@@ -10,24 +10,22 @@ Minimal full‑stack starter for experimenting with autonomous coding agents.
 
 ## Quickstart
 
-1) Create and activate a virtualenv, then install dependencies
+1) Install dependencies from the repository root
 
 ```bash
-cd /Users/mihaileric/Documents/code/modern-software-dev-assignments
-python -m venv .venv && source .venv/bin/activate
-pip install -e .[dev]
+uv sync --group dev
 ```
 
 2) (Optional) Install pre-commit hooks
 
 ```bash
-pre-commit install
+uv run pre-commit install
 ```
 
 3) Run the app (from `week5/`)
 
 ```bash
-cd week5 && make run
+cd week5 && uv run make run
 ```
 
 Open `http://localhost:8000` for the frontend and `http://localhost:8000/docs` for the API docs.
@@ -44,14 +42,14 @@ docs/                   # TASKS for agent-driven workflows
 ## Tests
 
 ```bash
-cd week5 && make test
+cd week5 && uv run make test
 ```
 
 ## Formatting/Linting
 
 ```bash
-cd week5 && make format
-cd week5 && make lint
+cd week5 && uv run make format
+cd week5 && uv run make lint
 ```
 
 ## Configuration

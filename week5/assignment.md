@@ -28,22 +28,22 @@ docs/                   # TASKS for agent-driven workflows
 
 ### Quickstart
 
-1) Activate your conda environment.
+1) Install dependencies from the repository root.
 
 ```bash
-conda activate cs146s
+uv sync --group dev
 ```
 
 2) (Optional) Install pre-commit hooks
 
 ```bash
-pre-commit install
+uv run pre-commit install
 ```
 
 3) Run the app (from `week5/` directory)
 
 ```bash
-make run
+cd week5 && uv run make run
 ```
 
 4) Open `http://localhost:8000` for the frontend and `http://localhost:8000/docs` for the API docs.
@@ -54,13 +54,13 @@ make run
 ### Testing
 Run the tests (from `week5/` directory)
 ```bash
-make test
+cd week5 && uv run make test
 ```
 
 ### Formatting/Linting
 ```bash
-make format
-make lint
+cd week5 && uv run make format
+cd week5 && uv run make lint
 ```
 
 ## Part I: Build Your Automation (Choose 2 or more) 
@@ -115,4 +115,3 @@ Work strictly in `week5/` (backend, frontend, logic, tests). Avoid changing othe
 1. Make sure you have all changes pushed to your remote repository for grading.
 2. **Make sure you've added both brentju and febielin as collaborators on your assignment repository.**
 2. Submit via Gradescope. 
-
