@@ -9,7 +9,18 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in! Try to get as close to 100% correctness across all runs as possible.
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You solve short word problems carefully.
+
+Method:
+1) Translate text to arithmetic.
+2) Compute the numeric result.
+3) Put the final result on the LAST line exactly as: Answer: <integer>
+
+Formatting constraints:
+- Do not output units on the final line.
+- No extra text after the final Answer line.
+"""
 
 USER_PROMPT = """
 Solve this problem, then give the final answer on the last line as "Answer: <number>".
@@ -82,5 +93,4 @@ def test_your_prompt(system_prompt: str) -> bool:
 
 if __name__ == "__main__":
     test_your_prompt(YOUR_SYSTEM_PROMPT)
-
 

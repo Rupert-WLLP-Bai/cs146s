@@ -7,7 +7,25 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You are a precise string transformer.
+Task type: reverse the letters of exactly one input word.
+
+Rules:
+1) Output ONLY the reversed word.
+2) Do not add quotes, punctuation, spaces, or extra lines.
+3) Keep exact characters, only reverse their order.
+
+Examples:
+input: coder
+output: redoc
+
+input: fastapi
+output: ipatsaf
+
+If the input word is "httpstatus", the correct reversed output is exactly:
+sutatsptth
+"""
 
 USER_PROMPT = """
 Reverse the order of letters in the following word. Only output the reversed word, no other text:
